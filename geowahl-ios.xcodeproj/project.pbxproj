@@ -19,6 +19,8 @@
 		CD1C83CD1CFC6252003984B6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83CC1CFC6252003984B6 /* InterfaceController.swift */; };
 		CD1C83CF1CFC6252003984B6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */; };
 		CD1C83D11CFC6252003984B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83D01CFC6252003984B6 /* Assets.xcassets */; };
+		CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */; };
+		CD1C83E71CFC8716003984B6 /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83E61CFC8716003984B6 /* ElectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CD1C83D01CFC6252003984B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1C83D21CFC6252003984B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewController.swift; sourceTree = "<group>"; };
+		CD1C83E61CFC8716003984B6 /* ElectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +127,11 @@
 		CD1C83A81CFC6251003984B6 /* geowahl-ios */ = {
 			isa = PBXGroup;
 			children = (
-				CD1C83A91CFC6251003984B6 /* AppDelegate.swift */,
-				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
-				CD1C83AD1CFC6251003984B6 /* Main.storyboard */,
+				CD1C83E31CFC6D42003984B6 /* Supporting Files */,
+				CD1C83E21CFC6C97003984B6 /* Controller */,
+				CD1C83E11CFC6C92003984B6 /* Views */,
+				CD1C83E01CFC6C89003984B6 /* Models */,
 				CD1C83B01CFC6251003984B6 /* Assets.xcassets */,
-				CD1C83B21CFC6251003984B6 /* LaunchScreen.storyboard */,
-				CD1C83B51CFC6251003984B6 /* Info.plist */,
 			);
 			path = "geowahl-ios";
 			sourceTree = "<group>";
@@ -152,6 +155,41 @@
 				CD1C83D21CFC6252003984B6 /* Info.plist */,
 			);
 			path = "geowahl-ios WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CD1C83E01CFC6C89003984B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CD1C83E11CFC6C92003984B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83AD1CFC6251003984B6 /* Main.storyboard */,
+				CD1C83B21CFC6251003984B6 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CD1C83E21CFC6C97003984B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
+				CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */,
+				CD1C83E61CFC8716003984B6 /* ElectionTableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CD1C83E31CFC6D42003984B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83A91CFC6251003984B6 /* AppDelegate.swift */,
+				CD1C83B51CFC6251003984B6 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +324,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1C83E71CFC8716003984B6 /* ElectionTableViewCell.swift in Sources */,
 				CD1C83AC1CFC6251003984B6 /* ViewController.swift in Sources */,
 				CD1C83AA1CFC6251003984B6 /* AppDelegate.swift in Sources */,
+				CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
