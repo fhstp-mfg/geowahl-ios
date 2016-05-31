@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ElectionTableViewController: UITableViewController {
+class ElectionTableViewController: UITableViewController, WCSessionDelegate {
+    
+   
+    private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        configureWCSession()
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        configureWCSession()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +34,43 @@ class ElectionTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        tableView.rowHeight = 64
+    }
+    
+    private func configureWCSession() {
+        session?.delegate = self
+        session?.activateSession()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func pushButton() {
+        let applicationDict = ["key": "value"]
+        do {
+            try session?.updateApplicationContext(applicationDict)
+            print("send")
+        } catch {
+            print("error")
+        }
+    }
     var elections: [String] = ["Wien", "NÖ", "OÖ", "Salzburg"]
+    
+    //Elections
+    var electionsnew = [
+        "1": [
+            "id": 1,
+            "slug": "Gemeinderatswahlen",
+            "name": "Gemeinderatswahlen"
+        ],
+        "2": [
+            "id": 2,
+            "slug": "Bundespräsidentenwahl",
+            "name": "Bundespräsidentenwahl"
+        ]
+        
+    ]
 
     // MARK: - Table view data source
 
@@ -41,9 +85,9 @@ class ElectionTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("stateCell", forIndexPath: indexPath) as! ElectionTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("stateCell", forIndexPath: indexPath) 
 
-        cell.electionNameLabel.text = elections[indexPath.row]
+        cell.textLabel?.text = elections[indexPath.row]
 
         return cell
     }
