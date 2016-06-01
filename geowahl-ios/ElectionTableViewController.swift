@@ -11,20 +11,7 @@ import WatchConnectivity
 
 class ElectionTableViewController: UITableViewController, WCSessionDelegate {
     
-   
-    private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        configureWCSession()
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        configureWCSession()
-    }
+    var session: WCSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +22,28 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         tableView.rowHeight = 64
+        
+        if WCSession.isSupported() {
+            print("Session is supported")
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+            
+            if session.paired {
+                print("Watch is paired")
+            } else {
+                print("Watch is not paired")
+            }
+            if session.reachable {
+                print("Phone is reachable")
+            } else {
+                print("Phone is not reachable")
+            }
+        } else {
+            print("Session is not supported")
+        }
     }
-    
-    private func configureWCSession() {
-        session?.delegate = self
-        session?.activateSession()
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,12 +51,13 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
     }
     @IBAction func pushButton() {
         let applicationDict = ["key": "value"]
-        do {
-            try session?.updateApplicationContext(applicationDict)
-            print("send")
-        } catch {
-            print("error")
-        }
+//        do {
+//            try session?.updateApplicationContext(applicationDict)
+//            print("send")
+//        } catch {
+//            print("error")
+//        }
+        session.transferUserInfo(applicationDict)
     }
     var elections: [String] = ["Wien", "NÖ", "OÖ", "Salzburg"]
     
@@ -90,6 +94,15 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
         cell.textLabel?.text = elections[indexPath.row]
 
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showStates" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let states = elections[indexPath.row]
+                (segue.destinationViewController as! StateTableViewController).statesName = states
+            }
+        }
     }
 
     /*

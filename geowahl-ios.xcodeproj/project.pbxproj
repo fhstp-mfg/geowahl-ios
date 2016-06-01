@@ -20,6 +20,7 @@
 		CD1C83CF1CFC6252003984B6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */; };
 		CD1C83D11CFC6252003984B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83D01CFC6252003984B6 /* Assets.xcassets */; };
 		CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */; };
+		CDCAF7F01CFEEC8900896BC5 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCAF7EF1CFEEC8900896BC5 /* StateTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		CD1C83D01CFC6252003984B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1C83D21CFC6252003984B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewController.swift; sourceTree = "<group>"; };
+		CDCAF7EF1CFEEC8900896BC5 /* StateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
 				CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */,
+				CDCAF7EF1CFEEC8900896BC5 /* StateTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1C83AC1CFC6251003984B6 /* ViewController.swift in Sources */,
+				CDCAF7F01CFEEC8900896BC5 /* StateTableViewController.swift in Sources */,
 				CD1C83AA1CFC6251003984B6 /* AppDelegate.swift in Sources */,
 				CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */,
 			);
