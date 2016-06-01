@@ -82,7 +82,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="64"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -103,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="838" y="116"/>
         </scene>
-        <!--Table View Controller-->
+        <!--State Table View Controller-->
         <scene sceneID="IXV-hb-tLP">
             <objects>
-                <tableViewController id="qFF-HY-6Ni" sceneMemberID="viewController">
+                <tableViewController id="qFF-HY-6Ni" customClass="StateTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5CS-TO-Jt7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ksA-ck-HkM" kind="show" identifier="" id="Rc7-FL-FxG"/>
+                                    <segue destination="ksA-ck-HkM" kind="show" id="Rc7-FL-FxG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

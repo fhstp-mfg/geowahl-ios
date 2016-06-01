@@ -17,7 +17,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var image: WKInterfaceImage!
     @IBOutlet var partyNameLabel: WKInterfaceLabel!
     @IBOutlet var locationNameLabel: WKInterfaceLabel!
-
+    
     
     var session: WCSession!
     
@@ -95,16 +95,16 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
-//    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-//        print("received")
-//        let key = applicationContext["key"] as? String
-//        
-//        //Use this to update the UI instantaneously (otherwise, takes a little while)
-//        dispatch_async(dispatch_get_main_queue()) {
-//            if let key = key {
-//                self.partyNameLabel.setText("\(key)")
-//            }
-//        }
-//    }
+    //    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+    //        print("received")
+    //        let key = applicationContext["key"] as? String
+    //
+    //        //Use this to update the UI instantaneously (otherwise, takes a little while)
+    //        dispatch_async(dispatch_get_main_queue()) {
+    //            if let key = key {
+    //                self.partyNameLabel.setText("\(key)")
+    //            }
+    //        }
+    //    }
     
 }

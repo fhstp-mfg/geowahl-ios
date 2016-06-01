@@ -10,14 +10,14 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="geowahl_ios_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="PartyNameLabel" id="ppH-IZ-pFC"/>
-                        <label alignment="left" text="LocationNameLabel" id="565-sJ-aDB"/>
-                        <imageView alignment="left" id="2Og-TN-6L7"/>
+                        <label alignment="left" text="Partei" id="PFa-wc-yBc"/>
+                        <label alignment="left" text="Ortschaft" id="1Ia-B1-bu9"/>
+                        <imageView alignment="left" id="zgE-QT-Yj0"/>
                     </items>
                     <connections>
-                        <outlet property="image" destination="2Og-TN-6L7" id="Rvc-7y-uzD"/>
-                        <outlet property="locationNameLabel" destination="565-sJ-aDB" id="Lmz-HY-cr1"/>
-                        <outlet property="partyNameLabel" destination="ppH-IZ-pFC" id="AvR-qS-Swn"/>
+                        <outlet property="image" destination="zgE-QT-Yj0" id="WYo-Kt-hFb"/>
+                        <outlet property="locationNameLabel" destination="1Ia-B1-bu9" id="leC-tA-V9E"/>
+                        <outlet property="partyNameLabel" destination="PFa-wc-yBc" id="5B6-nB-Rqf"/>
                     </connections>
                 </controller>
             </objects>
