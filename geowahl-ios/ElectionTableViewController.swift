@@ -55,41 +55,24 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
             print("Session is not supported")
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
-        let requestURL: NSURL = NSURL(string: "http://geowahl.suits.at/elections")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
+        let postEndpoint: String = "http://geowahl.suits.at/elections"
+        let url = NSURL(string: postEndpoint)!
         let sessionJSON = NSURLSession.sharedSession()
-        
-        let task = sessionJSON.dataTaskWithRequest(urlRequest) {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! NSHTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("File downloaded successfully.")
-                
-                do{
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-                    print(json)
-                    for i in 0..<json.count {
-                        if let electionName = json[i]["name"] {
-                            meinDaten.append(electionData(name: electionName as! String))
-                            print(meinDaten)
-                        }
-                    }
-                }catch {
-                    print("Error with Json: \(error)")
-                }
-                
-            } else {
-                print("File download error.")
+        sessionJSON.dataTaskWithURL(url, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            guard let realResponse = response as? NSHTTPURLResponse where realResponse.statusCode == 200 else {
+                print("Not a 200 response")
+                return
             }
-        }
-        task.resume()
-        print(meinDaten)
-        
-        
+            // Read the JSON
+            do {
+                if let ipString = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                    let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                }
+            } catch let error as NSError{
+                print("Error: \(error)")
+                return
+            }
+        }).resume()
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
