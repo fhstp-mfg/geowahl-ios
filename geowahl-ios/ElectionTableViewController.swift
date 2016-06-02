@@ -8,14 +8,16 @@
 
 import UIKit
 import WatchConnectivity
+import CoreLocation
 
-class ElectionTableViewController: UITableViewController, WCSessionDelegate {
+class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLLocationManagerDelegate {
     
     var session: WCSession!
-    
+    var locationManager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -23,6 +25,16 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         tableView.rowHeight = 64
         
+        self.locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            self.locationManager.startUpdatingLocation()
+        } else {
+            print("Need to Enable Location")
+        }
+        
+
         if WCSession.isSupported() {
             print("Session is supported")
             session = WCSession.defaultSession()
@@ -42,38 +54,76 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
         } else {
             print("Session is not supported")
         }
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        let requestURL: NSURL = NSURL(string: "http://geowahl.suits.at/elections")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
+        let sessionJSON = NSURLSession.sharedSession()
+        
+        let task = sessionJSON.dataTaskWithRequest(urlRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("File downloaded successfully.")
+                
+                do{
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
+                    print(json)
+                    for i in 0..<json.count {
+                        if let electionName = json[i]["name"] {
+                            meinDaten.append(electionData(name: electionName as! String))
+                            print(meinDaten)
+                        }
+                    }
+                }catch {
+                    print("Error with Json: \(error)")
+                }
+                
+            } else {
+                print("File download error.")
+            }
+        }
+        task.resume()
+        print(meinDaten)
+        
+        
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last! as CLLocation
+        let lat = location.coordinate.latitude
+        let long = location.coordinate.longitude
+        //print("Data: \((lat, long))")
+        
+        let geocoder = CLGeocoder()
+        let locationIn = CLLocation(latitude: lat, longitude: long)
+        geocoder.reverseGeocodeLocation(locationIn) {
+            (placemarks, error) -> Void in
+            let placeArray = placemarks as [CLPlacemark]!
+            var placeMark: CLPlacemark!
+            placeMark = placeArray?.first
+            
+            //print(placeMark.addressDictionary)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Errors: "  + error.localizedDescription)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func pushButton() {
-        let applicationDict = ["key": "value"]
-        //        do {
-        //            try session?.updateApplicationContext(applicationDict)
-        //            print("send")
-        //        } catch {
-        //            print("error")
-        //        }
-        session.transferUserInfo(applicationDict)
-    }
-    var elections: [String] = ["Wien", "NÖ", "OÖ", "Salzburg"]
     
     //Elections
-    var electionsnew = [
-        "1": [
-            "id": 1,
-            "slug": "Gemeinderatswahlen",
-            "name": "Gemeinderatswahlen"
-        ],
-        "2": [
-            "id": 2,
-            "slug": "Bundespräsidentenwahl",
-            "name": "Bundespräsidentenwahl"
-        ]
-        
+
+    var elections = [
+        ["name" : "Gemeinderatswahlen"],
+        ["name" : "Bundespräsidentenwahl"]
     ]
     
     // MARK: - Table view data source
@@ -89,18 +139,28 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("stateCell", forIndexPath: indexPath)
-        
-        cell.textLabel?.text = elections[indexPath.row]
-        
+//        if indexPath.row == 0 {
+//            cell.backgroundColor = UIColor.blueColor()
+//        }
+        let election = elections[indexPath.row]
+        cell.textLabel?.text =  election["name"]!
+
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(elections[indexPath.row])
+        let election = elections[indexPath.row]
+        session.transferUserInfo(["key": election["name"]!])
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showStates" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let states = elections[indexPath.row]
-                (segue.destinationViewController as! StateTableViewController).statesName = states
+                let election = elections[indexPath.row]
+                (segue.destinationViewController as! StateTableViewController).statesName = election["name"]
             }
         }
     }
@@ -149,23 +209,5 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate {
      // Pass the selected object to the new view controller.
      }
      */
-    
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "showStates" {
-    //            if let indexPath = tableView.indexPathForSelectedRow {
-    //
-    //            }
-    //        }
-    //    }
-    
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "showDaily" {
-    //            if let indexPath = tableView.indexPathForSelectedRow {
-    //                let dailyWeather = weeklyWeather[indexPath.row]
-    //
-    //                (segue.destinationViewController as! ViewController).dailyWeather = dailyWeather
-    //            }
-    //        }
-    //    }
     
 }
