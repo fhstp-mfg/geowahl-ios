@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Wahlergebnis-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,12 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Wahlergebnis" id="HjX-Vg-3aN">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="GTV-Ba-zcB"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2826" y="115"/>
         </scene>
-        <!--Districts Table View Controller-->
+        <!--Gemeinden-->
         <scene sceneID="xF2-57-MYH">
             <objects>
                 <tableViewController id="ksA-ck-HkM" customClass="DistrictsTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,6 +61,9 @@
                             <outlet property="delegate" destination="ksA-ck-HkM" id="NNk-xc-M8i"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Gemeinden" id="gx7-MS-qNy">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="8UQ-Hz-Vir"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8T-1l-ccL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,13 +104,15 @@
                             <outlet property="delegate" destination="0Za-2F-xeW" id="UbL-fy-jVl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Welche Wahl?" id="dBF-r5-cjx"/>
+                    <navigationItem key="navigationItem" title="Welche Wahl?" id="dBF-r5-cjx">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="4xB-qV-pkB"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5b6-UM-PUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="116"/>
         </scene>
-        <!--State Table View Controller-->
+        <!--Bundesländer-->
         <scene sceneID="IXV-hb-tLP">
             <objects>
                 <tableViewController id="qFF-HY-6Ni" customClass="StateTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,6 +147,9 @@
                             <outlet property="delegate" destination="qFF-HY-6Ni" id="mfk-hq-56D"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Bundesländer" id="0Uh-IU-Xia">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="R9v-f0-Fwf"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6u-Q6-XNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

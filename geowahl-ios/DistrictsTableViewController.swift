@@ -52,6 +52,7 @@ class DistrictsTableViewController: UITableViewController {
                     do {
                         let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                         districtsDict = jsonDictionary
+                        //print(districtsDict!["districts"]![0]!["name"]!)
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.tableView.reloadData()
                         })
@@ -94,8 +95,11 @@ class DistrictsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("districtsCell", forIndexPath: indexPath)
-        if let electionsArray = districtsDict!["districts"] {
-            // Get district names
+        //print(districtsDict!["districts"]![indexPath.row]["name"])
+        if let electionsDistricts = districtsDict!["districts"] {
+            if let electionsDistrictName = electionsDistricts[indexPath.row]["name"] {
+                cell.textLabel?.text = electionsDistrictName as? String
+            }
         } else {
             
         }
