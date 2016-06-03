@@ -9,4 +9,4 @@
 import Foundation
 
 var dict: NSDictionary?
-var districsDict: NSDictionary?
+var districtsDict: NSDictionary?

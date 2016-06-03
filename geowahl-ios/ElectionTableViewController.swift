@@ -125,12 +125,10 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if dict == nil {
             return 0
         } else {
@@ -143,7 +141,6 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath)
         if let electionsArray = dict!["elections"] {
             if let electionName = electionsArray[indexPath.row]["name"] as? String {

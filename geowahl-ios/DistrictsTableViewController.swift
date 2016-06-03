@@ -20,7 +20,6 @@ class DistrictsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 64
 
-        print(self.data)
         if let dataSlugs = data {
             guard let electionSlug = dataSlugs["electionSlug"] else {
                 return
@@ -30,9 +29,7 @@ class DistrictsTableViewController: UITableViewController {
             }
             self.electionSlug = electionSlug
             self.stateSlug = stateSlug
-            
         }
-        print(self.electionSlug!)
         getJson(slugs: "/\(self.electionSlug!)/\(self.stateSlug!)/districts")
     }
     
@@ -43,7 +40,6 @@ class DistrictsTableViewController: UITableViewController {
         } else {
             postEndpoint = "\(baseURL)\(slugs)"
         }
-        print(postEndpoint!)
         let config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let sessionJSON: NSURLSession = NSURLSession(configuration: config)
         let url = NSURL(string: postEndpoint!)
@@ -55,7 +51,7 @@ class DistrictsTableViewController: UITableViewController {
                 case 200:
                     do {
                         let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                        districsDict = jsonDictionary
+                        districtsDict = jsonDictionary
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.tableView.reloadData()
                         })
@@ -81,16 +77,14 @@ class DistrictsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if districsDict == nil {
+        if districtsDict == nil {
             return 0
         } else {
-            if let district = districsDict!["districs"] {
+            if let district = districtsDict!["districts"] {
                 return district.count
             } else {
                 return 0
@@ -100,9 +94,8 @@ class DistrictsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("districtsCell", forIndexPath: indexPath)
-        print("test")
-        if let electionsArray = districsDict!["districs"] {
-            print(electionsArray)
+        if let electionsArray = districtsDict!["districts"] {
+            // Get district names
         } else {
             
         }
