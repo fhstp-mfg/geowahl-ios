@@ -22,6 +22,7 @@
 		CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */; };
 		CD25C0F31D002C43002BB875 /* electionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25C0F21D002C43002BB875 /* electionData.swift */; };
 		CD7E2BE21CFDFB8000ADFAB0 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */; };
+		CDDF076D1D0193D1002439FA /* DistrictsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDF076C1D0193D1002439FA /* DistrictsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewController.swift; sourceTree = "<group>"; };
 		CD25C0F21D002C43002BB875 /* electionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electionData.swift; sourceTree = "<group>"; };
 		CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
+		CDDF076C1D0193D1002439FA /* DistrictsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
 				CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */,
 				CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */,
+				CDDF076C1D0193D1002439FA /* DistrictsTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				CD1C83AA1CFC6251003984B6 /* AppDelegate.swift in Sources */,
 				CD25C0F31D002C43002BB875 /* electionData.swift in Sources */,
 				CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */,
+				CDDF076D1D0193D1002439FA /* DistrictsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

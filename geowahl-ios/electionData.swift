@@ -8,7 +8,5 @@
 
 import Foundation
 
-struct electionData {
-    var name: String
-}
-var meinDaten: [electionData] = []
+var dict: NSDictionary?
+var districsDict: NSDictionary?
