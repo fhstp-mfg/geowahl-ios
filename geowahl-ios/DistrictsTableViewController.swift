@@ -19,7 +19,7 @@ class DistrictsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 64
-
+        print(data)
         if let dataSlugs = data {
             guard let electionSlug = dataSlugs["electionSlug"] else {
                 return
@@ -27,6 +27,10 @@ class DistrictsTableViewController: UITableViewController {
             guard let stateSlug = dataSlugs["statesSlug"] else {
                 return
             }
+            guard let stateName = dataSlugs["statesName"] else {
+                return
+            }
+            self.title = stateName
             self.electionSlug = electionSlug
             self.stateSlug = stateSlug
         }
@@ -52,7 +56,6 @@ class DistrictsTableViewController: UITableViewController {
                     do {
                         let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                         districtsDict = jsonDictionary
-                        //print(districtsDict!["districts"]![0]!["name"]!)
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.tableView.reloadData()
                         })
@@ -104,5 +107,13 @@ class DistrictsTableViewController: UITableViewController {
             
         }
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                (segue.destinationViewController as! ViewController).data = districtsDict!["districts"]![indexPath.row]!
+            }
+        }
     }
 }

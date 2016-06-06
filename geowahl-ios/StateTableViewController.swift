@@ -16,9 +16,9 @@ class StateTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 64
-        
         if let indexPath = index {
             indexPathOfElection = indexPath
+            self.title = dict!["elections"]![indexPathOfElection!]["name"] as! String
         } else {
             print("No data")
         }
@@ -75,10 +75,11 @@ class StateTableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 if let electionsArray = dict!["elections"] {
                     if let election = electionsArray[indexPathOfElection!] {
-                        if let electionStates = election["states"]!![indexPath.row]["slug"] {
+                        if let electionStates = election["states"]!![indexPath.row]["slug"], let statesName = election["states"]!![indexPath.row]["name"] {
                             slugsDict = [
                                 "electionSlug" : (election["slug"])! as! String,
-                                "statesSlug" : electionStates! as! String
+                                "statesSlug" : electionStates! as! String,
+                                "statesName" : statesName! as! String
                             ]
                             (segue.destinationViewController as! DistrictsTableViewController).data = slugsDict
                         }

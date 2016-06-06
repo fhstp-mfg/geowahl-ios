@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Wahlergebnis-->
@@ -14,13 +15,29 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Di-a9-82e" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="0.0" width="560" height="516"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Di-a9-82e" secondAttribute="bottom" constant="20" id="Qdu-CI-MTK"/>
+                            <constraint firstItem="9Di-a9-82e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="epL-pJ-Yxe"/>
+                            <constraint firstItem="9Di-a9-82e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="i59-v5-GYi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Di-a9-82e" secondAttribute="trailing" id="kOA-a6-95e"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Wahlergebnis" id="HjX-Vg-3aN">
                         <barButtonItem key="backBarButtonItem" title="Zurück" id="GTV-Ba-zcB"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pieChartView" destination="9Di-a9-82e" id="h9w-JJ-Mqb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +69,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="8Yq-fg-XjI"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showDetail" id="8Yq-fg-XjI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
