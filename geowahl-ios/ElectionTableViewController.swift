@@ -15,7 +15,7 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
     var session: WCSession!
     var locationManager = CLLocationManager()
     var postEndpoint: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 64
@@ -93,16 +93,6 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
         let location = locations.last! as CLLocation
         let lat = location.coordinate.latitude
         let long = location.coordinate.longitude
-        let geocoder = CLGeocoder()
-        let locationIn = CLLocation(latitude: lat, longitude: long)
-//        geocoder.reverseGeocodeLocation(locationIn) {
-//            (placemarks, error) -> Void in
-//            let placeArray = placemarks as [CLPlacemark]!
-//            var placeMark: CLPlacemark!
-//            placeMark = placeArray?.first
-//            
-//            //print(placeMark.addressDictionary)
-//        }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -115,7 +105,7 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
     }
     
     //Elections
-
+    
     var elections = [
         ["name" : "Gemeinderatswahlen"],
         ["name" : "Bundespräsidentenwahl"]
@@ -153,8 +143,8 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let election = elections[indexPath.row]
-//        session.transferUserInfo(["key": election["name"]!])
+        //        let election = elections[indexPath.row]
+        //        session.transferUserInfo(["key": election["name"]!])
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

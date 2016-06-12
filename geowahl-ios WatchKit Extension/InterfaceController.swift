@@ -83,29 +83,23 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-        print("received")
-        let key = userInfo["key"] as? String
-        
-        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        print(userInfo)
         dispatch_async(dispatch_get_main_queue()) {
-            if let key = key {
-                self.partyNameLabel.setText("\(key)")
+            guard let name = userInfo["name"] else {
+                return
             }
+            self.locationNameLabel.setText("\(name)")
         }
     }
-    
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        print("received")
-        let key = applicationContext["key"] as? String
 
-        //Use this to update the UI instantaneously (otherwise, takes a little while)
-        dispatch_async(dispatch_get_main_queue()) {
-            if let key = key {
-                self.partyNameLabel.setText("\(key)")
-            }
-        }
-    }
+//    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+//        dispatch_async(dispatch_get_main_queue()) {
+//            guard let name = applicationContext["name"] else {
+//                return
+//            }
+//            self.locationNameLabel.setText("\(name)")
+//        }
+//    }
     
 }

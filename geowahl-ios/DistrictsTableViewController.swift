@@ -8,9 +8,11 @@
 
 import UIKit
 import CoreLocation
+import WatchConnectivity
 
-class DistrictsTableViewController: UITableViewController {
-
+class DistrictsTableViewController: UITableViewController, WCSessionDelegate {
+    
+    var session: WCSession!
     var data : [String : String]? = nil
     var postEndpoint: String?
     var electionSlug: String?
@@ -19,7 +21,6 @@ class DistrictsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 64
-        print(data)
         if let dataSlugs = data {
             guard let electionSlug = dataSlugs["electionSlug"] else {
                 return
@@ -34,6 +35,27 @@ class DistrictsTableViewController: UITableViewController {
             self.electionSlug = electionSlug
             self.stateSlug = stateSlug
         }
+        
+        if WCSession.isSupported() {
+            print("Session is supported")
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+            
+            if session.paired {
+                print("Watch is paired")
+            } else {
+                print("Watch is not paired")
+            }
+            if session.reachable {
+                print("Phone is reachable")
+            } else {
+                print("Phone is not reachable")
+            }
+        } else {
+            print("Session is not supported")
+        }
+        
         getJson(slugs: "/\(self.electionSlug!)/\(self.stateSlug!)/districts")
     }
     
@@ -72,18 +94,18 @@ class DistrictsTableViewController: UITableViewController {
         }
         dataTask.resume()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if districtsDict == nil {
             return 0
@@ -94,6 +116,10 @@ class DistrictsTableViewController: UITableViewController {
                 return 0
             }
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+                session.transferUserInfo(districtsDict!["districts"]![indexPath.row]! as! [String : AnyObject])
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

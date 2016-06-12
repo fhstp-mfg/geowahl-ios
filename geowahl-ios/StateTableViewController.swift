@@ -9,33 +9,33 @@
 import UIKit
 
 class StateTableViewController: UITableViewController {
-
+    
     var index: Int?
     var indexPathOfElection: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 64
         if let indexPath = index {
             indexPathOfElection = indexPath
-            self.title = dict!["elections"]![indexPathOfElection!]["name"] as! String
+            self.title = dict!["elections"]![indexPathOfElection!]["name"] as? String
         } else {
             print("No data")
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if dict == nil {
             return 0
@@ -53,7 +53,7 @@ class StateTableViewController: UITableViewController {
         }
         return 0
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stateCell", forIndexPath: indexPath)
         if let electionsArray = dict!["elections"] {
@@ -62,7 +62,7 @@ class StateTableViewController: UITableViewController {
                     cell.textLabel?.text = electionStates as? String
                 }
             }
-
+            
         } else {
             
         }

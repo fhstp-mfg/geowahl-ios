@@ -20,11 +20,11 @@
 		CD1C83CF1CFC6252003984B6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */; };
 		CD1C83D11CFC6252003984B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83D01CFC6252003984B6 /* Assets.xcassets */; };
 		CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */; };
-		CD25C0F31D002C43002BB875 /* electionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25C0F21D002C43002BB875 /* electionData.swift */; };
-		CD7592631D05FE6100C56843 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD75925C1D05FCFC00C56843 /* Charts.framework */; };
-		CD7592641D05FE6100C56843 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD75925C1D05FCFC00C56843 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD2B44321D0D49D300E7675A /* electionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B44311D0D49D300E7675A /* electionData.swift */; };
+		CD2B44341D0D4A7B00E7675A /* DistrictsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B44331D0D4A7B00E7675A /* DistrictsTableViewController.swift */; };
+		CD2B44471D0D548300E7675A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B44401D0D538500E7675A /* Charts.framework */; };
+		CD2B44481D0D548300E7675A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B44401D0D538500E7675A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD7E2BE21CFDFB8000ADFAB0 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */; };
-		CDDF076D1D0193D1002439FA /* DistrictsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDF076C1D0193D1002439FA /* DistrictsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,37 +42,37 @@
 			remoteGlobalIDString = CD1C83C61CFC6252003984B6;
 			remoteInfo = "geowahl-ios WatchKit Extension";
 		};
-		CD75925B1D05FCFC00C56843 /* PBXContainerItemProxy */ = {
+		CD2B443F1D0D538500E7675A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CD7592461D05FCEF00C56843 /* Charts.xcodeproj */;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
 			remoteInfo = "Charts-iOS";
 		};
-		CD75925D1D05FCFC00C56843 /* PBXContainerItemProxy */ = {
+		CD2B44411D0D538500E7675A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CD7592461D05FCEF00C56843 /* Charts.xcodeproj */;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
 			remoteInfo = "Charts-TV";
 		};
-		CD75925F1D05FCFC00C56843 /* PBXContainerItemProxy */ = {
+		CD2B44431D0D538500E7675A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CD7592461D05FCEF00C56843 /* Charts.xcodeproj */;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
 			remoteInfo = "Charts-OSX";
 		};
-		CD7592611D05FCFC00C56843 /* PBXContainerItemProxy */ = {
+		CD2B44451D0D538500E7675A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CD7592461D05FCEF00C56843 /* Charts.xcodeproj */;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
 			remoteInfo = ChartsTests;
 		};
-		CD7592651D05FE6100C56843 /* PBXContainerItemProxy */ = {
+		CD2B44491D0D548300E7675A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CD7592461D05FCEF00C56843 /* Charts.xcodeproj */;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
 			remoteInfo = "Charts-iOS";
@@ -102,13 +102,13 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD7592671D05FE6100C56843 /* Embed Frameworks */ = {
+		CD2B444B1D0D548300E7675A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD7592641D05FE6100C56843 /* Charts.framework in Embed Frameworks */,
+				CD2B44481D0D548300E7675A /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,10 +133,10 @@
 		CD1C83D01CFC6252003984B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1C83D21CFC6252003984B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewController.swift; sourceTree = "<group>"; };
-		CD25C0F21D002C43002BB875 /* electionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electionData.swift; sourceTree = "<group>"; };
-		CD7592461D05FCEF00C56843 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		CD2B44311D0D49D300E7675A /* electionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electionData.swift; sourceTree = "<group>"; };
+		CD2B44331D0D4A7B00E7675A /* DistrictsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictsTableViewController.swift; sourceTree = "<group>"; };
+		CD2B44381D0D538500E7675A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
-		CDDF076C1D0193D1002439FA /* DistrictsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7592631D05FE6100C56843 /* Charts.framework in Frameworks */,
+				CD2B44471D0D548300E7675A /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				CD1C83A81CFC6251003984B6 /* geowahl-ios */,
-				CD7592461D05FCEF00C56843 /* Charts.xcodeproj */,
+				CD2B44381D0D538500E7675A /* Charts.xcodeproj */,
 				CD1C83BC1CFC6252003984B6 /* geowahl-ios WatchKit App */,
 				CD1C83CB1CFC6252003984B6 /* geowahl-ios WatchKit Extension */,
 				CD1C83A71CFC6251003984B6 /* Products */,
@@ -215,7 +215,7 @@
 		CD1C83E01CFC6C89003984B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CD25C0F21D002C43002BB875 /* electionData.swift */,
+				CD2B44311D0D49D300E7675A /* electionData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -232,10 +232,10 @@
 		CD1C83E21CFC6C97003984B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
 				CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */,
 				CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */,
-				CDDF076C1D0193D1002439FA /* DistrictsTableViewController.swift */,
-				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
+				CD2B44331D0D4A7B00E7675A /* DistrictsTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -249,13 +249,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CD7592551D05FCFC00C56843 /* Products */ = {
+		CD2B44391D0D538500E7675A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD75925C1D05FCFC00C56843 /* Charts.framework */,
-				CD75925E1D05FCFC00C56843 /* Charts.framework */,
-				CD7592601D05FCFC00C56843 /* Charts.framework */,
-				CD7592621D05FCFC00C56843 /* ChartsTests.xctest */,
+				CD2B44401D0D538500E7675A /* Charts.framework */,
+				CD2B44421D0D538500E7675A /* Charts.framework */,
+				CD2B44441D0D538500E7675A /* Charts.framework */,
+				CD2B44461D0D538500E7675A /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,13 +271,13 @@
 				CD1C83A31CFC6251003984B6 /* Frameworks */,
 				CD1C83A41CFC6251003984B6 /* Resources */,
 				CD1C83DC1CFC6252003984B6 /* Embed Watch Content */,
-				CD7592671D05FE6100C56843 /* Embed Frameworks */,
+				CD2B444B1D0D548300E7675A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CD1C83BB1CFC6252003984B6 /* PBXTargetDependency */,
-				CD7592661D05FE6100C56843 /* PBXTargetDependency */,
+				CD2B444A1D0D548300E7675A /* PBXTargetDependency */,
 			);
 			name = "geowahl-ios";
 			productName = "geowahl-ios";
@@ -352,8 +352,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = CD7592551D05FCFC00C56843 /* Products */;
-					ProjectRef = CD7592461D05FCEF00C56843 /* Charts.xcodeproj */;
+					ProductGroup = CD2B44391D0D538500E7675A /* Products */;
+					ProjectRef = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -366,32 +366,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CD75925C1D05FCFC00C56843 /* Charts.framework */ = {
+		CD2B44401D0D538500E7675A /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = CD75925B1D05FCFC00C56843 /* PBXContainerItemProxy */;
+			remoteRef = CD2B443F1D0D538500E7675A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CD75925E1D05FCFC00C56843 /* Charts.framework */ = {
+		CD2B44421D0D538500E7675A /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = CD75925D1D05FCFC00C56843 /* PBXContainerItemProxy */;
+			remoteRef = CD2B44411D0D538500E7675A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CD7592601D05FCFC00C56843 /* Charts.framework */ = {
+		CD2B44441D0D538500E7675A /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = CD75925F1D05FCFC00C56843 /* PBXContainerItemProxy */;
+			remoteRef = CD2B44431D0D538500E7675A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CD7592621D05FCFC00C56843 /* ChartsTests.xctest */ = {
+		CD2B44461D0D538500E7675A /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = CD7592611D05FCFC00C56843 /* PBXContainerItemProxy */;
+			remoteRef = CD2B44451D0D538500E7675A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -434,9 +434,9 @@
 				CD1C83AC1CFC6251003984B6 /* ViewController.swift in Sources */,
 				CD7E2BE21CFDFB8000ADFAB0 /* StateTableViewController.swift in Sources */,
 				CD1C83AA1CFC6251003984B6 /* AppDelegate.swift in Sources */,
-				CD25C0F31D002C43002BB875 /* electionData.swift in Sources */,
+				CD2B44321D0D49D300E7675A /* electionData.swift in Sources */,
 				CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */,
-				CDDF076D1D0193D1002439FA /* DistrictsTableViewController.swift in Sources */,
+				CD2B44341D0D4A7B00E7675A /* DistrictsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,10 +462,10 @@
 			target = CD1C83C61CFC6252003984B6 /* geowahl-ios WatchKit Extension */;
 			targetProxy = CD1C83C91CFC6252003984B6 /* PBXContainerItemProxy */;
 		};
-		CD7592661D05FE6100C56843 /* PBXTargetDependency */ = {
+		CD2B444A1D0D548300E7675A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Charts-iOS";
-			targetProxy = CD7592651D05FE6100C56843 /* PBXContainerItemProxy */;
+			targetProxy = CD2B44491D0D548300E7675A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

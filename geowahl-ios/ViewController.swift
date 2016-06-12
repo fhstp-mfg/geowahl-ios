@@ -64,13 +64,12 @@ class ViewController: UIViewController {
             }
             namesArray.append(result["name"] as! String)
             percentArray.append(result["percent"] as! Double)
-            print("Name: \(namesArray), Percent: \(percentArray), color: \(colorArray)")
         }
         
         setChart(namesArray, values: percentArray, colors: colorArray)
         setAttributes(pieChartView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,14 +91,14 @@ class ViewController: UIViewController {
         
         //var colors: [UIColor] = []
         
-//        for i in 0..<dataPoints.count {
-//            let red = Double(arc4random_uniform(256))
-//            let green = Double(arc4random_uniform(256))
-//            let blue = Double(arc4random_uniform(256))
-//            
-//            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-//            colors.append(color)
-//        }
+        //        for i in 0..<dataPoints.count {
+        //            let red = Double(arc4random_uniform(256))
+        //            let green = Double(arc4random_uniform(256))
+        //            let blue = Double(arc4random_uniform(256))
+        //
+        //            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+        //            colors.append(color)
+        //        }
         
         pieChartDataSet.colors = colors
         pieChartDataSet.sliceSpace = 2.0
@@ -113,7 +112,7 @@ class ViewController: UIViewController {
         view.drawSliceTextEnabled = false
         view.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.EaseInOutBack)
     }
-
-
+    
+    
 }
 

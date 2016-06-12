@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Wahlergebnis-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,55 +15,52 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Di-a9-82e" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="0.0" width="560" height="516"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Baw-Nt-BJv" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="64" width="560" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Di-a9-82e" secondAttribute="bottom" constant="20" id="Qdu-CI-MTK"/>
-                            <constraint firstItem="9Di-a9-82e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="epL-pJ-Yxe"/>
-                            <constraint firstItem="9Di-a9-82e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="i59-v5-GYi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Di-a9-82e" secondAttribute="trailing" id="kOA-a6-95e"/>
+                            <constraint firstItem="Baw-Nt-BJv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ePd-10-gT9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Baw-Nt-BJv" secondAttribute="trailing" id="glq-wk-RIO"/>
+                            <constraint firstItem="Baw-Nt-BJv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qJE-gp-x6U"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Baw-Nt-BJv" secondAttribute="bottom" constant="20" id="zGQ-0g-8ya"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Wahlergebnis" id="HjX-Vg-3aN">
-                        <barButtonItem key="backBarButtonItem" title="Zurück" id="GTV-Ba-zcB"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="Zqk-Mh-snk"/>
                     <connections>
-                        <outlet property="pieChartView" destination="9Di-a9-82e" id="h9w-JJ-Mqb"/>
+                        <outlet property="pieChartView" destination="Baw-Nt-BJv" id="pUk-e4-Ajy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2826" y="115"/>
         </scene>
-        <!--Gemeinden-->
+        <!--Title-->
         <scene sceneID="xF2-57-MYH">
             <objects>
                 <tableViewController id="ksA-ck-HkM" customClass="DistrictsTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zo-HI-EnD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zo-HI-EnD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="districtsCell" textLabel="vOs-2c-4VG" rowHeight="64" style="IBUITableViewCellStyleDefault" id="lMQ-YD-qa4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="districtsCell" textLabel="bAy-tM-BHG" rowHeight="64" style="IBUITableViewCellStyleDefault" id="lMQ-YD-qa4">
                                 <rect key="frame" x="0.0" y="92" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lMQ-YD-qa4" id="OKC-i1-BEX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vOs-2c-4VG">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="64"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bAy-tM-BHG">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="63"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -78,9 +75,7 @@
                             <outlet property="delegate" destination="ksA-ck-HkM" id="NNk-xc-M8i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Gemeinden" id="gx7-MS-qNy">
-                        <barButtonItem key="backBarButtonItem" title="Zurück" id="8UQ-Hz-Vir"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="mT8-Kh-pAA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8T-1l-ccL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,35 +116,33 @@
                             <outlet property="delegate" destination="0Za-2F-xeW" id="UbL-fy-jVl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Welche Wahl?" id="dBF-r5-cjx">
-                        <barButtonItem key="backBarButtonItem" title="Zurück" id="4xB-qV-pkB"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Welche Wahl?" id="dBF-r5-cjx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5b6-UM-PUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="116"/>
         </scene>
-        <!--Bundesländer-->
+        <!--Title-->
         <scene sceneID="IXV-hb-tLP">
             <objects>
                 <tableViewController id="qFF-HY-6Ni" customClass="StateTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5CS-TO-Jt7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5CS-TO-Jt7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateCell" textLabel="5Eg-gU-s9c" rowHeight="64" style="IBUITableViewCellStyleDefault" id="FKt-0W-9fU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateCell" textLabel="Edv-Y1-OMv" rowHeight="64" style="IBUITableViewCellStyleDefault" id="FKt-0W-9fU">
                                 <rect key="frame" x="0.0" y="92" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKt-0W-9fU" id="gBL-Ec-maR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Eg-gU-s9c">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="64"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Edv-Y1-OMv">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="63"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -164,9 +157,7 @@
                             <outlet property="delegate" destination="qFF-HY-6Ni" id="mfk-hq-56D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bundesländer" id="0Uh-IU-Xia">
-                        <barButtonItem key="backBarButtonItem" title="Zurück" id="R9v-f0-Fwf"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="DYo-mH-gqd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6u-Q6-XNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
