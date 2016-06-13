@@ -20,6 +20,24 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     
     var session: WCSession!
+    var percentArray : [Double] = []
+    var namesArray : [String] = []
+    var winnerColor: UIColor?
+    
+    enum Parties: String {
+        case Griss
+        case Hofer
+        case Hundstorfer
+        case Khol
+        case Lugner
+        case VdB
+        case SPOE
+        case FPOE
+        case OEVP
+        case GRUE
+        case NEOS
+        case FRANK
+    }
     
     override init() {
         super.init()
@@ -41,8 +59,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        
+        // Configure interface objects here.
+    }
+    
+    func drawColor(winnerColor: UIColor) {
         let width = WKInterfaceDevice.currentDevice().screenBounds.width
         let height = WKInterfaceDevice.currentDevice().screenBounds.height
         
@@ -52,8 +72,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         let context = UIGraphicsGetCurrentContext()
         
         // Setup for the path appearance
-        UIColor.blueColor().setStroke()
-        UIColor.blueColor().setFill()
+        winnerColor.setStroke()
+        winnerColor.setFill()
         
         // Draw an oval
         let rect = CGRectMake(0, 0, width, height)
@@ -70,8 +90,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         UIGraphicsEndImageContext()
         
         image.setImage(uiimage)
-        
-        // Configure interface objects here.
     }
     
     override func willActivate() {
@@ -84,22 +102,61 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        percentArray = []
+        namesArray = []
         print(userInfo)
+        for result in userInfo["results"]! as! [AnyObject] {
+            percentArray.append(result["exact"] as! Double)
+            namesArray.append(result["name"] as! String)
+        }
+        let maxPercent = percentArray.maxElement()
+        let maxPercentIndex = percentArray.indexOf(maxPercent!)
+        let winnerName = namesArray[maxPercentIndex!]
+        
+        if winnerName == Parties.GRUE.rawValue || winnerName == Parties.VdB.rawValue {
+            winnerColor = UIColor.init(red: 120/255, green: 175/255, blue: 53/255, alpha: 1.0)
+        }
+        if winnerName == Parties.SPOE.rawValue || winnerName == Parties.Hundstorfer.rawValue {
+            winnerColor = UIColor.init(red: 243/255, green: 17/255, blue: 55/255, alpha: 1.0)
+        }
+        if winnerName == Parties.OEVP.rawValue || winnerName == Parties.Khol.rawValue {
+            winnerColor = UIColor.init(red: 54/255, green: 54/255, blue: 54/255, alpha: 1.0)
+        }
+        if winnerName == Parties.NEOS.rawValue {
+            winnerColor = UIColor.init(red: 234/255, green: 61/255, blue: 136/255, alpha: 1.0)
+        }
+        if winnerName == Parties.FRANK.rawValue {
+            winnerColor = UIColor.init(red: 248/255, green: 227/255, blue: 35/255, alpha: 1.0)
+        }
+        if winnerName == Parties.Griss.rawValue {
+            winnerColor = UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1.0)
+        }
+        if winnerName == Parties.Lugner.rawValue {
+            winnerColor = UIColor.init(red: 119/255, green: 6/255, blue: 140/255, alpha: 1.0)
+        }
+        if winnerName == Parties.FPOE.rawValue || winnerName == Parties.Hofer.rawValue {
+            winnerColor = UIColor.init(red: 14/255, green: 66/255, blue: 142/255, alpha: 1.0)
+        }
+        
         dispatch_async(dispatch_get_main_queue()) {
             guard let name = userInfo["name"] else {
                 return
             }
             self.locationNameLabel.setText("\(name)")
+            self.partyNameLabel.setText("\(winnerName)")
+            self.drawColor(self.winnerColor!)
         }
     }
-
-//    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-//        dispatch_async(dispatch_get_main_queue()) {
-//            guard let name = applicationContext["name"] else {
-//                return
-//            }
-//            self.locationNameLabel.setText("\(name)")
-//        }
-//    }
+    
+    
+    
+    //    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+    //        dispatch_async(dispatch_get_main_queue()) {
+    //            guard let name = applicationContext["name"] else {
+    //                return
+    //            }
+    //            self.locationNameLabel.setText("\(name)")
+    //        }
+    //    }
     
 }
