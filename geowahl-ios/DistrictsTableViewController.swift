@@ -119,7 +119,7 @@ class DistrictsTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                session.transferUserInfo(districtsDict!["districts"]![indexPath.row]! as! [String : AnyObject])
+        session.transferUserInfo(districtsDict!["districts"]![indexPath.row]! as! [String : AnyObject])
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

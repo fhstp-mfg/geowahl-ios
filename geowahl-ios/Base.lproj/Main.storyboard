@@ -44,7 +44,7 @@
         <scene sceneID="xF2-57-MYH">
             <objects>
                 <tableViewController id="ksA-ck-HkM" customClass="DistrictsTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zo-HI-EnD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zo-HI-EnD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,11 +53,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lMQ-YD-qa4" id="OKC-i1-BEX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bAy-tM-BHG">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="63"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="64"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,7 +126,7 @@
         <scene sceneID="IXV-hb-tLP">
             <objects>
                 <tableViewController id="qFF-HY-6Ni" customClass="StateTableViewController" customModule="geowahl_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5CS-TO-Jt7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5CS-TO-Jt7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,11 +135,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKt-0W-9fU" id="gBL-Ec-maR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Edv-Y1-OMv">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="63"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="64"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -157,7 +157,13 @@
                             <outlet property="delegate" destination="qFF-HY-6Ni" id="mfk-hq-56D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="DYo-mH-gqd"/>
+                    <navigationItem key="navigationItem" title="Title" id="DYo-mH-gqd">
+                        <barButtonItem key="rightBarButtonItem" title="Location" id="3GS-JZ-zqJ">
+                            <connections>
+                                <action selector="getLocation:" destination="qFF-HY-6Ni" id="jVY-bF-ueY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6u-Q6-XNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

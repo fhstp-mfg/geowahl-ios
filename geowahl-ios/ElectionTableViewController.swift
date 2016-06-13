@@ -7,59 +7,22 @@
 //
 
 import UIKit
-import WatchConnectivity
-import CoreLocation
 
-class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLLocationManagerDelegate {
+class ElectionTableViewController: UITableViewController {
     
-    var session: WCSession!
-    var locationManager = CLLocationManager()
     var postEndpoint: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 64
         
-        self.locationManager.requestAlwaysAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            self.locationManager.delegate = self
-            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            self.locationManager.startUpdatingLocation()
-        } else {
-            print("Need to Enable Location")
-        }
-        
-        if WCSession.isSupported() {
-            print("Session is supported")
-            session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-            
-            if session.paired {
-                print("Watch is paired")
-            } else {
-                print("Watch is not paired")
-            }
-            if session.reachable {
-                print("Phone is reachable")
-            } else {
-                print("Phone is not reachable")
-            }
-        } else {
-            print("Session is not supported")
-        }
-        
         getJson(slugs: "/elections")
         
     }
     
-    func getJson(slugs slugs: String, lat: CLLocationDegrees? = nil, long: CLLocationDegrees? = nil ) {
+    func getJson(slugs slugs: String) {
         let baseURL: String = "http://geowahl.suits.at"
-        if let lat = lat, let long = long {
-            postEndpoint = "\(baseURL)\(slugs)/\(lat),\(long)"
-        } else {
-            postEndpoint = "\(baseURL)\(slugs)"
-        }
+        postEndpoint = "\(baseURL)\(slugs)"
         let config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let sessionJSON: NSURLSession = NSURLSession(configuration: config)
         let url = NSURL(string: postEndpoint!)
@@ -89,27 +52,10 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
         dataTask.resume()
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last! as CLLocation
-        let lat = location.coordinate.latitude
-        let long = location.coordinate.longitude
-    }
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Errors: "  + error.localizedDescription)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //Elections
-    
-    var elections = [
-        ["name" : "Gemeinderatswahlen"],
-        ["name" : "Bundespräsidentenwahl"]
-    ]
     
     
     // MARK: - Table view data source
@@ -140,11 +86,6 @@ class ElectionTableViewController: UITableViewController, WCSessionDelegate, CLL
             
         }
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //        let election = elections[indexPath.row]
-        //        session.transferUserInfo(["key": election["name"]!])
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

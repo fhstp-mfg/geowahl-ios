@@ -102,9 +102,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        print(userInfo)
         percentArray = []
         namesArray = []
-        print(userInfo)
         for result in userInfo["results"]! as! [AnyObject] {
             percentArray.append(result["exact"] as! Double)
             namesArray.append(result["name"] as! String)
