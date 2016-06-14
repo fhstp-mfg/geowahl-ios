@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD1C83AA1CFC6251003984B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83A91CFC6251003984B6 /* AppDelegate.swift */; };
+		CD1C83AC1CFC6251003984B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83AB1CFC6251003984B6 /* ViewController.swift */; };
+		CD1C83AF1CFC6251003984B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83AD1CFC6251003984B6 /* Main.storyboard */; };
+		CD1C83B11CFC6251003984B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83B01CFC6251003984B6 /* Assets.xcassets */; };
+		CD1C83B41CFC6251003984B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83B21CFC6251003984B6 /* LaunchScreen.storyboard */; };
+		CD1C83B91CFC6252003984B6 /* geowahl-ios WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CD1C83B81CFC6252003984B6 /* geowahl-ios WatchKit App.app */; };
+		CD1C83BF1CFC6252003984B6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83BD1CFC6252003984B6 /* Interface.storyboard */; };
+		CD1C83C11CFC6252003984B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83C01CFC6252003984B6 /* Assets.xcassets */; };
+		CD1C83C81CFC6252003984B6 /* geowahl-ios WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CD1C83C71CFC6252003984B6 /* geowahl-ios WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CD1C83CD1CFC6252003984B6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83CC1CFC6252003984B6 /* InterfaceController.swift */; };
+		CD1C83CF1CFC6252003984B6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */; };
+		CD1C83D11CFC6252003984B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1C83D01CFC6252003984B6 /* Assets.xcassets */; };
+		CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */; };
+		CD2B44321D0D49D300E7675A /* electionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B44311D0D49D300E7675A /* electionData.swift */; };
+		CD2B44341D0D4A7B00E7675A /* DistrictsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B44331D0D4A7B00E7675A /* DistrictsTableViewController.swift */; };
+		CD2B44471D0D548300E7675A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B44401D0D538500E7675A /* Charts.framework */; };
+		CD2B44481D0D548300E7675A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B44401D0D538500E7675A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD7E2BE21CFDFB8000ADFAB0 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD1C83BA1CFC6252003984B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1C839E1CFC6251003984B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1C83B71CFC6252003984B6;
+			remoteInfo = "geowahl-ios WatchKit App";
+		};
+		CD1C83C91CFC6252003984B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1C839E1CFC6251003984B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1C83C61CFC6252003984B6;
+			remoteInfo = "geowahl-ios WatchKit Extension";
+		};
+		CD2B443F1D0D538500E7675A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		CD2B44411D0D538500E7675A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		CD2B44431D0D538500E7675A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		CD2B44451D0D538500E7675A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		CD2B44491D0D548300E7675A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD1C83D81CFC6252003984B6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CD1C83C81CFC6252003984B6 /* geowahl-ios WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1C83DC1CFC6252003984B6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CD1C83B91CFC6252003984B6 /* geowahl-ios WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD2B444B1D0D548300E7675A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD2B44481D0D548300E7675A /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CD1C83A61CFC6251003984B6 /* geowahl-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geowahl-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1C83A91CFC6251003984B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD1C83AB1CFC6251003984B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD1C83AE1CFC6251003984B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD1C83B01CFC6251003984B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD1C83B31CFC6251003984B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD1C83B51CFC6251003984B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1C83B81CFC6252003984B6 /* geowahl-ios WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geowahl-ios WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1C83BE1CFC6252003984B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CD1C83C01CFC6252003984B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD1C83C21CFC6252003984B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1C83C71CFC6252003984B6 /* geowahl-ios WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "geowahl-ios WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1C83CC1CFC6252003984B6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		CD1C83D01CFC6252003984B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD1C83D21CFC6252003984B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewController.swift; sourceTree = "<group>"; };
+		CD2B44311D0D49D300E7675A /* electionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electionData.swift; sourceTree = "<group>"; };
+		CD2B44331D0D4A7B00E7675A /* DistrictsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictsTableViewController.swift; sourceTree = "<group>"; };
+		CD2B44381D0D538500E7675A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD1C83A31CFC6251003984B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD2B44471D0D548300E7675A /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1C83C41CFC6252003984B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD1C839D1CFC6251003984B6 = {
+			isa = PBXGroup;
+			children = (
+				CD1C83A81CFC6251003984B6 /* geowahl-ios */,
+				CD2B44381D0D538500E7675A /* Charts.xcodeproj */,
+				CD1C83BC1CFC6252003984B6 /* geowahl-ios WatchKit App */,
+				CD1C83CB1CFC6252003984B6 /* geowahl-ios WatchKit Extension */,
+				CD1C83A71CFC6251003984B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD1C83A71CFC6251003984B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83A61CFC6251003984B6 /* geowahl-ios.app */,
+				CD1C83B81CFC6252003984B6 /* geowahl-ios WatchKit App.app */,
+				CD1C83C71CFC6252003984B6 /* geowahl-ios WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD1C83A81CFC6251003984B6 /* geowahl-ios */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83E31CFC6D42003984B6 /* Supporting Files */,
+				CD1C83E21CFC6C97003984B6 /* Controller */,
+				CD1C83E11CFC6C92003984B6 /* Views */,
+				CD1C83E01CFC6C89003984B6 /* Models */,
+				CD1C83B01CFC6251003984B6 /* Assets.xcassets */,
+			);
+			path = "geowahl-ios";
+			sourceTree = "<group>";
+		};
+		CD1C83BC1CFC6252003984B6 /* geowahl-ios WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83BD1CFC6252003984B6 /* Interface.storyboard */,
+				CD1C83C01CFC6252003984B6 /* Assets.xcassets */,
+				CD1C83C21CFC6252003984B6 /* Info.plist */,
+			);
+			path = "geowahl-ios WatchKit App";
+			sourceTree = "<group>";
+		};
+		CD1C83CB1CFC6252003984B6 /* geowahl-ios WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83CC1CFC6252003984B6 /* InterfaceController.swift */,
+				CD1C83CE1CFC6252003984B6 /* ExtensionDelegate.swift */,
+				CD1C83D01CFC6252003984B6 /* Assets.xcassets */,
+				CD1C83D21CFC6252003984B6 /* Info.plist */,
+			);
+			path = "geowahl-ios WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CD1C83E01CFC6C89003984B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B44311D0D49D300E7675A /* electionData.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CD1C83E11CFC6C92003984B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83AD1CFC6251003984B6 /* Main.storyboard */,
+				CD1C83B21CFC6251003984B6 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CD1C83E21CFC6C97003984B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83AB1CFC6251003984B6 /* ViewController.swift */,
+				CD1C83E41CFC7414003984B6 /* ElectionTableViewController.swift */,
+				CD7E2BE11CFDFB8000ADFAB0 /* StateTableViewController.swift */,
+				CD2B44331D0D4A7B00E7675A /* DistrictsTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CD1C83E31CFC6D42003984B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C83A91CFC6251003984B6 /* AppDelegate.swift */,
+				CD1C83B51CFC6251003984B6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD2B44391D0D538500E7675A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B44401D0D538500E7675A /* Charts.framework */,
+				CD2B44421D0D538500E7675A /* Charts.framework */,
+				CD2B44441D0D538500E7675A /* Charts.framework */,
+				CD2B44461D0D538500E7675A /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD1C83A51CFC6251003984B6 /* geowahl-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1C83DD1CFC6252003984B6 /* Build configuration list for PBXNativeTarget "geowahl-ios" */;
+			buildPhases = (
+				CD1C83A21CFC6251003984B6 /* Sources */,
+				CD1C83A31CFC6251003984B6 /* Frameworks */,
+				CD1C83A41CFC6251003984B6 /* Resources */,
+				CD1C83DC1CFC6252003984B6 /* Embed Watch Content */,
+				CD2B444B1D0D548300E7675A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD1C83BB1CFC6252003984B6 /* PBXTargetDependency */,
+				CD2B444A1D0D548300E7675A /* PBXTargetDependency */,
+			);
+			name = "geowahl-ios";
+			productName = "geowahl-ios";
+			productReference = CD1C83A61CFC6251003984B6 /* geowahl-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD1C83B71CFC6252003984B6 /* geowahl-ios WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1C83D91CFC6252003984B6 /* Build configuration list for PBXNativeTarget "geowahl-ios WatchKit App" */;
+			buildPhases = (
+				CD1C83B61CFC6252003984B6 /* Resources */,
+				CD1C83D81CFC6252003984B6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD1C83CA1CFC6252003984B6 /* PBXTargetDependency */,
+			);
+			name = "geowahl-ios WatchKit App";
+			productName = "geowahl-ios WatchKit App";
+			productReference = CD1C83B81CFC6252003984B6 /* geowahl-ios WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CD1C83C61CFC6252003984B6 /* geowahl-ios WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1C83D51CFC6252003984B6 /* Build configuration list for PBXNativeTarget "geowahl-ios WatchKit Extension" */;
+			buildPhases = (
+				CD1C83C31CFC6252003984B6 /* Sources */,
+				CD1C83C41CFC6252003984B6 /* Frameworks */,
+				CD1C83C51CFC6252003984B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "geowahl-ios WatchKit Extension";
+			productName = "geowahl-ios WatchKit Extension";
+			productReference = CD1C83C71CFC6252003984B6 /* geowahl-ios WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD1C839E1CFC6251003984B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Patrick Eberhardt";
+				TargetAttributes = {
+					CD1C83A51CFC6251003984B6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CD1C83B71CFC6252003984B6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CD1C83C61CFC6252003984B6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = CD1C83A11CFC6251003984B6 /* Build configuration list for PBXProject "geowahl-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD1C839D1CFC6251003984B6;
+			productRefGroup = CD1C83A71CFC6251003984B6 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CD2B44391D0D538500E7675A /* Products */;
+					ProjectRef = CD2B44381D0D538500E7675A /* Charts.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CD1C83A51CFC6251003984B6 /* geowahl-ios */,
+				CD1C83B71CFC6252003984B6 /* geowahl-ios WatchKit App */,
+				CD1C83C61CFC6252003984B6 /* geowahl-ios WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CD2B44401D0D538500E7675A /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = CD2B443F1D0D538500E7675A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD2B44421D0D538500E7675A /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = CD2B44411D0D538500E7675A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD2B44441D0D538500E7675A /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = CD2B44431D0D538500E7675A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD2B44461D0D538500E7675A /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = CD2B44451D0D538500E7675A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD1C83A41CFC6251003984B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1C83B41CFC6251003984B6 /* LaunchScreen.storyboard in Resources */,
+				CD1C83B11CFC6251003984B6 /* Assets.xcassets in Resources */,
+				CD1C83AF1CFC6251003984B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1C83B61CFC6252003984B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1C83C11CFC6252003984B6 /* Assets.xcassets in Resources */,
+				CD1C83BF1CFC6252003984B6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1C83C51CFC6252003984B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1C83D11CFC6252003984B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD1C83A21CFC6251003984B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1C83AC1CFC6251003984B6 /* ViewController.swift in Sources */,
+				CD7E2BE21CFDFB8000ADFAB0 /* StateTableViewController.swift in Sources */,
+				CD1C83AA1CFC6251003984B6 /* AppDelegate.swift in Sources */,
+				CD2B44321D0D49D300E7675A /* electionData.swift in Sources */,
+				CD1C83E51CFC7414003984B6 /* ElectionTableViewController.swift in Sources */,
+				CD2B44341D0D4A7B00E7675A /* DistrictsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1C83C31CFC6252003984B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1C83CF1CFC6252003984B6 /* ExtensionDelegate.swift in Sources */,
+				CD1C83CD1CFC6252003984B6 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD1C83BB1CFC6252003984B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD1C83B71CFC6252003984B6 /* geowahl-ios WatchKit App */;
+			targetProxy = CD1C83BA1CFC6252003984B6 /* PBXContainerItemProxy */;
+		};
+		CD1C83CA1CFC6252003984B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD1C83C61CFC6252003984B6 /* geowahl-ios WatchKit Extension */;
+			targetProxy = CD1C83C91CFC6252003984B6 /* PBXContainerItemProxy */;
+		};
+		CD2B444A1D0D548300E7675A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = CD2B44491D0D548300E7675A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD1C83AD1CFC6251003984B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1C83AE1CFC6251003984B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD1C83B21CFC6251003984B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1C83B31CFC6251003984B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CD1C83BD1CFC6252003984B6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1C83BE1CFC6252003984B6 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD1C83D31CFC6252003984B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD1C83D41CFC6252003984B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD1C83D61CFC6252003984B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "geowahl-ios WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.increation.geowahl-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		CD1C83D71CFC6252003984B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "geowahl-ios WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.increation.geowahl-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		CD1C83DA1CFC6252003984B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = geowahl_ios_WatchKit_Extension;
+				INFOPLIST_FILE = "geowahl-ios WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.increation.geowahl-ios.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		CD1C83DB1CFC6252003984B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = geowahl_ios_WatchKit_Extension;
+				INFOPLIST_FILE = "geowahl-ios WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.increation.geowahl-ios.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		CD1C83DE1CFC6252003984B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "geowahl-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.increation.geowahl-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CD1C83DF1CFC6252003984B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "geowahl-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.increation.geowahl-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD1C83A11CFC6251003984B6 /* Build configuration list for PBXProject "geowahl-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1C83D31CFC6252003984B6 /* Debug */,
+				CD1C83D41CFC6252003984B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD1C83D51CFC6252003984B6 /* Build configuration list for PBXNativeTarget "geowahl-ios WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1C83D61CFC6252003984B6 /* Debug */,
+				CD1C83D71CFC6252003984B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD1C83D91CFC6252003984B6 /* Build configuration list for PBXNativeTarget "geowahl-ios WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1C83DA1CFC6252003984B6 /* Debug */,
+				CD1C83DB1CFC6252003984B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD1C83DD1CFC6252003984B6 /* Build configuration list for PBXNativeTarget "geowahl-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1C83DE1CFC6252003984B6 /* Debug */,
+				CD1C83DF1CFC6252003984B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD1C839E1CFC6251003984B6 /* Project object */;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="geowahl_ios_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Partei" id="PFa-wc-yBc"/>
+                        <label alignment="left" text="Ortschaft" id="1Ia-B1-bu9"/>
+                        <imageView alignment="left" id="zgE-QT-Yj0"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="zgE-QT-Yj0" id="WYo-Kt-hFb"/>
+                        <outlet property="locationNameLabel" destination="1Ia-B1-bu9" id="leC-tA-V9E"/>
+                        <outlet property="partyNameLabel" destination="PFa-wc-yBc" id="5B6-nB-Rqf"/>
+                        <segue destination="WTO-kB-Hjp" kind="relationship" relationship="nextPage" id="Vhe-2X-vyp"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Agw-O3-ptw">
+            <objects>
+                <controller id="WTO-kB-Hjp"/>
+            </objects>
+            <point key="canvasLocation" x="632" y="273"/>
+        </scene>
+    </scenes>
+</document>
