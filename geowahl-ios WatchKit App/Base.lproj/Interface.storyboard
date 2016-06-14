@@ -18,9 +18,17 @@
                         <outlet property="image" destination="zgE-QT-Yj0" id="WYo-Kt-hFb"/>
                         <outlet property="locationNameLabel" destination="1Ia-B1-bu9" id="leC-tA-V9E"/>
                         <outlet property="partyNameLabel" destination="PFa-wc-yBc" id="5B6-nB-Rqf"/>
+                        <segue destination="WTO-kB-Hjp" kind="relationship" relationship="nextPage" id="Vhe-2X-vyp"/>
                     </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Agw-O3-ptw">
+            <objects>
+                <controller id="WTO-kB-Hjp"/>
+            </objects>
+            <point key="canvasLocation" x="632" y="273"/>
         </scene>
     </scenes>
 </document>
